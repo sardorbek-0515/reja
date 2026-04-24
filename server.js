@@ -17,6 +17,7 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
     user = JSON.parse(data);
   }
 });
+//
 
 //backend serverni qurishda node expresslardan foydalandik
 // qurishni 4 bosqichi bor
@@ -78,7 +79,7 @@ server.listen(PORT, function () {
 
 // //////////////////////////////////////////////
 
-// console.log("Web Serverni boshlash");
+// console.slog("Web Serverni boshlash");
 // const express = require("express");
 // const app = express();
 // const http = require("http");
