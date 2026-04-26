@@ -60,14 +60,16 @@ app.get("/author", (req, res) => {
 
 app.get("/", function (req, res) {
   //(get)databas dan malumotni olishda
-  res.render("harid");
+  res.render("reja");
 });
 
 // pass qilamiz
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The server is running seccessfully on port: ${PORT}`);
+  console.log(
+    `The server is running seccessfully on port: ${PORT}, http://localhost:${PORT}`,
+  );
 });
 //YANI SERVER 3- portda muvofaqiyatli ishlayabdi degan port chiqadi
 
