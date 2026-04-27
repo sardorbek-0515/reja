@@ -40,38 +40,38 @@
 
 //==================ms:calback setInterval davomiy chiqadi==========================
 
-console.log("Jack Ma maslahatlari");
-const list = [
-  "yaxshi talaba bo'ling", // 0-20
-  "togri boshliq tanlang va ko'proq hato qiling", // 20-30
-  "o'zingizga ishlashni boshlang", // 30-40
-  "yoshlarga investitsiya qiling", // 40-50
-  "endi dam oling, natijangizdan rohatlaning", //60
-];
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//   "yaxshi talaba bo'ling", // 0-20
+//   "togri boshliq tanlang va ko'proq hato qiling", // 20-30
+//   "o'zingizga ishlashni boshlang", // 30-40
+//   "yoshlarga investitsiya qiling", // 40-50
+//   "endi dam oling, natijangizdan rohatlaning", //60
+// ];
 
-function maslahatBering(a, callback) {
-  if (typeof a !== "number")
-    callback("insert a number", null); //buyerda 1 qism xatolikka tegishli insert a namber yani raqam kiriting ,2 qism qaytarmoqchi bolgan resultga tegishli null
-  else if (a <= 20) callback(null, list[0]);
-  else if (a > 20 && a <= 30) callback(null, list[1]);
-  else if (a > 30 && a <= 40) callback(null, list[2]);
-  else if (a > 40 && a <= 50) callback(null, list[3]);
-  else if (a > 50 && a <= 60) callback(null, list[4]);
-  else {
-    setInterval(function () {
-      callback(null, list[4]);
-    }, 1000);
-  }
-}
+// function maslahatBering(a, callback) {
+//   if (typeof a !== "number")
+//     callback("insert a number", null); //buyerda 1 qism xatolikka tegishli insert a namber yani raqam kiriting ,2 qism qaytarmoqchi bolgan resultga tegishli null
+//   else if (a <= 20) callback(null, list[0]);
+//   else if (a > 20 && a <= 30) callback(null, list[1]);
+//   else if (a > 30 && a <= 40) callback(null, list[2]);
+//   else if (a > 40 && a <= 50) callback(null, list[3]);
+//   else if (a > 50 && a <= 60) callback(null, list[4]);
+//   else {
+//     setInterval(function () {
+//       callback(null, list[4]);
+//     }, 1000);
+//   }
+// }
 
-console.log("passed here 0");
-maslahatBering(70, (err, data) => {
-  if (err) console.log("ERROR:", err);
-  else {
-    console.log(data);
-  }
-});
-console.log("passsed here 1");
+// console.log("passed here 0");
+// maslahatBering(70, (err, data) => {
+//   if (err) console.log("ERROR:", err);
+//   else {
+//     console.log(data);
+//   }
+// });
+// console.log("passsed here 1");
 //===============================================
 
 //================ Asynchronous functionlarni qo'llash=============
@@ -147,24 +147,18 @@ console.log("passsed here 1");
 // }
 // run();
 
-// //============================ MITASK-A==================================
+//============================ MITASK-A==================================
 
-// function countLetter(letter, text, callback) {
-//   setTimeout(() => {
-//     if (typeof letter !== "string" || typeof text !== "string") {
-//       callback("Parametrlar string bo'lishi kerak", null);
-//     } else {
-//       let count = 0;
-//       for (let char of text) {
-//         if (char === letter) count++;
-//       }
-//       callback(null, count);
-//     }
-//   }, 1000);
-// }
+function countLetter(letter, word) {
+  let count = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      count++;
+    }
+  }
+  return count;
+}
 
-// // Test
-// countLetter("e", "engineer", (err, data) => {
-//   if (err) console.log("ERROR:", err);
-//   else console.log("javob:", data); // 3
-// });
+console.log(countLetter("e", "engineer"));
+console.log(countLetter("n", "engineer"));
+console.log(countLetter("r", "engineer"));
