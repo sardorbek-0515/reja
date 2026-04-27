@@ -51,9 +51,20 @@ app.set("view engine", "ejs");
 //4 Routing code
 //backendni ichida Frontent ni yasaymiz
 app.post("/create-item", (req, res) => {
+  console.log("user entered /create-item");
   //(req) uzini bersak butun jamoani korish mumkin
   //post malumotni uzi bn olib keladi va database yozadi
   //TODO: code with db here
+  console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("nimadur xatolik boldi");
+    } else {
+      res.end("muvofaqqiyatli qoshildi");
+    }
+  });
 });
 
 app.get("/author", (req, res) => {
@@ -62,7 +73,17 @@ app.get("/author", (req, res) => {
 
 app.get("/", function (req, res) {
   //(get)databas dan malumotni olishda
-  res.render("reja");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("Nimadur xato boldi");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;
