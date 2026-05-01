@@ -29,6 +29,38 @@ function countDigits(str) {
 console.log(countDigits("ad2a54y79wet0sfgb9"));
 //natija 7
 
+
+//============================ MITASK-c==================================
+function checkContent(str1, str2) {
+  if (str1.length !== str2.length) return false;
+
+  
+  let count1 = {};
+  let count2 = {};
+
+  for (let ch of str1) {
+    count1[ch] = (count1[ch] || 0) + 1;
+  }
+
+  for (let ch of str2) {
+    count2[ch] = (count2[ch] || 0) + 1;
+  }
+
+  //  solishtirish
+  for (let key in count1) {
+    if (count1[key] !== count2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(checkContent("mitgroup", "gmtiprou")); // true
+console.log(checkContent("hello", "olelh"));       // true
+console.log(checkContent("abc", "abd"));           // false
+
+
 //Backend tili            Single-thread , Multi-thread ga bolinadi
 
 //  Single-thread - nodejs -> (Single-thread) hissoblanadi = bir xonali degani Event loop orqali ko‘p vazifalarni navbat bilan bajaradi.
