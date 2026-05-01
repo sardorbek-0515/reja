@@ -20,6 +20,7 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
 //Mongo DB chaqirish
 
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 //backend serverni qurishda node expresslardan foydalandikss
 // qurishni 4 bosqichi bor
@@ -59,27 +60,43 @@ app.post("/create-item", (req, res) => {
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     console.log(data.ops);
-    // res.json(data.ops[0]);
+    res.json(data.ops[0]);
   });
 });
 
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    },
+  );
 });
 
+//=========== DATABASEDAN MALUMOTLARNI O'QITISH
 app.get("/", function (req, res) {
-  //(get)databas dan malumotni olishda
-  console.log("user entered /");
+  console.log("user enyered /");
   db.collection("plans")
     .find()
     .toArray((err, data) => {
       if (err) {
         console.log(err);
-        res.end("Nimadur xato boldi");
+        res.end("nimadur xatolik bo'ldi");
       } else {
         res.render("reja", { items: data });
       }
     });
+});
+
+//== get: database dan malumotni olish uchun ishlatiladi
+app.get("/", function (req, res) {
+  res.render("reja");
+});
+
+//=== author
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 
 module.exports = app;
