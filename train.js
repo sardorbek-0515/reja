@@ -1,64 +1,107 @@
 //============================ MITASK-A==================================
 
-function countLetter(letter, word) {
-  let count = 0;
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter) {
-      count++;
-    }
-  }
-  return count;
-}
+// function countLetter(letter, word) {
+//   let count = 0;
+//   for (let i = 0; i < word.length; i++) {
+//     if (word[i] === letter) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
 
-console.log(countLetter("e", "engineer"));
-console.log(countLetter("n", "engineer"));
-console.log(countLetter("r", "engineer"));
+// console.log(countLetter("e", "engineer"));
+// console.log(countLetter("n", "engineer"));
+// console.log(countLetter("r", "engineer"));
 
-//============================ MITASK-b==================================
+// //============================ MITASK-b==================================
 
-function countDigits(str) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (!isNaN(str[i]) && str[i] !== " ") {
-      count++;
-    }
-  }
-  return count;
-}
+// function countDigits(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (!isNaN(str[i]) && str[i] !== " ") {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
 
-console.log(countDigits("ad2a54y79wet0sfgb9"));
-//natija 7
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+// //natija 7
 
 
-//============================ MITASK-c==================================
-function checkContent(str1, str2) {
-  if (str1.length !== str2.length) return false;
+// // //============================ MITASK-c==================================
+// function checkContent(str1, str2) {
+//   if (str1.length !== str2.length) return false;
 
   
-  let count1 = {};
-  let count2 = {};
+//   let count1 = {};
+//   let count2 = {};
 
-  for (let ch of str1) {
-    count1[ch] = (count1[ch] || 0) + 1;
+//   for (let ch of str1) {
+//     count1[ch] = (count1[ch] || 0) + 1;
+//   }
+
+//   for (let ch of str2) {
+//     count2[ch] = (count2[ch] || 0) + 1;
+//   }
+
+//   //  solishtirish
+//   for (let key in count1) {
+//     if (count1[key] !== count2[key]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// console.log(checkContent("mitgroup", "gmtiprou")); // true
+// console.log(checkContent("hello", "olelh"));       // true
+// console.log(checkContent("abc", "abd"));           // false
+
+
+
+//============================ MITASK-A==================================
+
+class Shop {
+  constructor(yog, shakar, suv) {
+    this.yog = yog
+    this.shakar = shakar;
+    this.suv = suv;
+
   }
 
-  for (let ch of str2) {
-    count2[ch] = (count2[ch] || 0) + 1;
-  }
-
-  //  solishtirish
-  for (let key in count1) {
-    if (count1[key] !== count2[key]) {
-      return false;
-    }
-  }
-
-  return true;
+qoldiq() {
+ let hozir = new Date().toLocaleTimeString();
+    return `Hozir ${hozir}da ${this.yog}ta yog, ${this.shakar}ta shakar va ${this.suv}ta suv mavjud!`;
 }
 
-console.log(checkContent("mitgroup", "gmtiprou")); // true
-console.log(checkContent("hello", "olelh"));       // true
-console.log(checkContent("abc", "abd"));           // false
+sotish(mahsulot, soni) {
+  let hozir = new Date().toLocaleTimeString();
+  this[mahsulot] -= soni;
+  return `Hozir ${hozir}da ${soni}ta ${mahsulot} sotildi`;
+}
+qabul (mahsulot, soni) {
+  let hozir = new Date().toLocaleTimeString();
+  this[mahsulot] += soni;
+  return `Hozir ${hozir}da ${soni}ta ${mahsulot} qabul qilindi`;
+ }
+}
+
+const shop = new Shop(4, 5, 2);
+
+console.log(shop.qoldiq());
+
+console.log(shop.sotish("yog", 2));
+
+console.log(shop.qabul("suv", 3));
+
+console.log(shop.qoldiq());
+
+
+
+
 
 
 //Backend tili            Single-thread , Multi-thread ga bolinadi
