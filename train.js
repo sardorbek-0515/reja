@@ -64,44 +64,53 @@
 
 //============================ MITASK-A==================================
 
-class Shop {
-  constructor(yog, shakar, suv) {
-    this.yog = yog
-    this.shakar = shakar;
-    this.suv = suv;
+// class Shop {
+//   constructor(yog, shakar, suv) {
+//     this.yog = yog
+//     this.shakar = shakar;
+//     this.suv = suv;
 
+//   }
+
+// qoldiq() {
+//  let hozir = new Date().toLocaleTimeString();
+//     return `Hozir ${hozir}da ${this.yog}ta yog, ${this.shakar}ta shakar va ${this.suv}ta suv mavjud!`;
+// }
+
+// sotish(mahsulot, soni) {
+//   let hozir = new Date().toLocaleTimeString();
+//   this[mahsulot] -= soni;
+//   return `Hozir ${hozir}da ${soni}ta ${mahsulot} sotildi`;
+// }
+// qabul (mahsulot, soni) {
+//   let hozir = new Date().toLocaleTimeString();
+//   this[mahsulot] += soni;
+//   return `Hozir ${hozir}da ${soni}ta ${mahsulot} qabul qilindi`;
+//  }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// console.log(shop.qoldiq());
+
+// console.log(shop.sotish("yog", 2));
+
+// console.log(shop.qabul("suv", 3));
+
+// console.log(shop.qoldiq());
+
+
+// // //============================ MITASK-D==================================
+//
+
+function teskari(str) {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i]; 
   }
-
-qoldiq() {
- let hozir = new Date().toLocaleTimeString();
-    return `Hozir ${hozir}da ${this.yog}ta yog, ${this.shakar}ta shakar va ${this.suv}ta suv mavjud!`;
+  return reversed;
 }
-
-sotish(mahsulot, soni) {
-  let hozir = new Date().toLocaleTimeString();
-  this[mahsulot] -= soni;
-  return `Hozir ${hozir}da ${soni}ta ${mahsulot} sotildi`;
-}
-qabul (mahsulot, soni) {
-  let hozir = new Date().toLocaleTimeString();
-  this[mahsulot] += soni;
-  return `Hozir ${hozir}da ${soni}ta ${mahsulot} qabul qilindi`;
- }
-}
-
-const shop = new Shop(4, 5, 2);
-
-console.log(shop.qoldiq());
-
-console.log(shop.sotish("yog", 2));
-
-console.log(shop.qabul("suv", 3));
-
-console.log(shop.qoldiq());
-
-
-
-
+console.log(teskari("hello")); 
 
 
 //Backend tili            Single-thread , Multi-thread ga bolinadi
