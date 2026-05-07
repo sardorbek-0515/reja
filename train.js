@@ -111,6 +111,18 @@ function teskari(str) {
 }
 console.log(teskari("hello")); 
 
+// // //============================ MITASK-F==================================//
+
+function findDoublers(str) {
+  for (let i = 0; i < str.length; i++) {
+    if (i !== str.lastIndexOf(str[i])) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(findDoublers("cherry")); // true (l ikki marta bor)
+console.log(findDoublers("abc"));   // false
 
 //Backend tili            Single-thread , Multi-thread ga bolinadi
 
