@@ -102,27 +102,51 @@
 
 // // //============================ MITASK-E==================================//
 
-function teskari(str) {
-  let reversed = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversed += str[i]; 
-  }
-  return reversed;
-}
-console.log(teskari("hello")); 
+// function teskari(str) {
+//   let reversed = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversed += str[i]; 
+//   }
+//   return reversed;
+// }
+// console.log(teskari("hello")); 
 
-// // //============================ MITASK-F==================================//
+// // // //============================ MITASK-F==================================//
 
-function findDoublers(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (i !== str.lastIndexOf(str[i])) {
-      return true;
+// function findDoublers(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if (i !== str.lastIndexOf(str[i])) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(findDoublers("cherry")); // true ( ikki marta bor)
+// console.log(findDoublers("abc"));   // false
+
+
+
+// // // //============================ MITASK-G==================================//
+
+function getHighestIndex(arr) {
+
+  let max = arr[0]
+  let index = 0
+
+  for (let d = 0; d < arr.length; d++) {
+
+    if (arr[d] > max) {
+
+      max = arr[d]
+      index = d 
+
     }
   }
-  return false;
+
+  return index
 }
-console.log(findDoublers("cherry")); // true (l ikki marta bor)
-console.log(findDoublers("abc"));   // false
+
+console.log(getHighestIndex([5, 21, 17, 8]))
 
 //Backend tili            Single-thread , Multi-thread ga bolinadi
 
