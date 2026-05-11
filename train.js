@@ -148,6 +148,50 @@ function getHighestIndex(arr) {
 
 console.log(getHighestIndex([5, 21, 17, 8]))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getLowestIndex(arr) {
+  let max = arr[0]
+  let index = 0 
+  for (let k = 0; k < arr.length; k++) {
+    if(arr[k] < max) {
+      max = arr[k]
+      index = k
+    }
+  }
+  return index
+}
+
+console.log(getLowestIndex([8, 3, 12, 3, 20]))
+
+
+
+
+
+
+
+
 //Backend tili            Single-thread , Multi-thread ga bolinadi
 
 //  Single-thread - nodejs -> (Single-thread) hissoblanadi = bir xonali degani Event loop orqali ko‘p vazifalarni navbat bilan bajaradi.
