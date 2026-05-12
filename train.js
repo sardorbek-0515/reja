@@ -128,25 +128,38 @@
 
 // // // //============================ MITASK-G==================================//
 
-function getHighestIndex(arr) {
+// function getHighestIndex(arr) {
 
-  let max = arr[0]
-  let index = 0
+//   let max = arr[0]
+//   let index = 0
 
-  for (let d = 0; d < arr.length; d++) {
+//   for (let d = 0; d < arr.length; d++) {
 
-    if (arr[d] > max) {
+//     if (arr[d] > max) {
 
-      max = arr[d]
-      index = d 
+//       max = arr[d]
+//       index = d 
 
+//     }
+//   }
+
+//   return index
+// }
+
+// console.log(getHighestIndex([5, 21, 17, 8]))
+
+// // // //============================ MITASK-H==================================//
+function getPositive(arr) {
+  let result = "";
+  for (let x of arr) {
+    if (x > 0) {
+      result += x.toString();
     }
   }
-
-  return index
+  return result;
 }
 
-console.log(getHighestIndex([5, 21, 17, 8]))
+console.log(getPositive([1, -4, 2]));
 
 
 
@@ -171,19 +184,20 @@ console.log(getHighestIndex([5, 21, 17, 8]))
 
 
 
-function getLowestIndex(arr) {
-  let max = arr[0]
-  let index = 0 
-  for (let k = 0; k < arr.length; k++) {
-    if(arr[k] < max) {
-      max = arr[k]
-      index = k
-    }
-  }
-  return index
-}
 
-console.log(getLowestIndex([8, 3, 12, 3, 20]))
+// function getLowestIndex(arr) {
+//   let max = arr[0]
+//   let index = 0 
+//   for (let k = 0; k < arr.length; k++) {
+//     if(arr[k] < max) {
+//       max = arr[k]
+//       index = k
+//     }
+//   }
+//   return index
+// }
+
+// console.log(getLowestIndex([8, 3, 12, 3, 20]))
 
 
 
